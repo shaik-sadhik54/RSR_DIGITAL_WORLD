@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>ATTENDANCE</title>
+<link rel="icon" href="https://i.postimg.cc/L5YfnSJ5/Picsart-24-06-28-17-15-33-702.png">
+<link rel="shortcut icon" href="https://i.postimg.cc/L5YfnSJ5/Picsart-24-06-28-17-15-33-702.png">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #CBE1EF;
+    color: #1E4A6B;
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #4B7EA3;
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    top: 0;
+  }
+
+  .heading {
+    margin-top: 100px; /* Adjusted margin-top for space */
+  }
+
+  #search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-right: auto;
+    width: 100%;
+    position: relative;
+  }
+
+  #search-box {
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 100%; /* Increased width of the search box */
+    font-size: 15px;
+    box-sizing: border-box;
+    background: #f7f7f7;
+    border: 2px solid transparent;
+  }
+
+  #microphone-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-links {
+    margin-left: 20px;
+  }
+
+  .nav-links img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .container {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  #sectionSelect {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  #gridContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .box {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .box.selected {
+    background-color: #1E4A6B;
+    color: white;
+  }
+     #attendance {
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-bottom: 100px;
+            background: #1E4A6B;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+  #generatePDF {
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background: #1E4A6B;
+    color: #fff;
+  }
+
+  .textbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .textbox-container input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    margin-right: 10px;
+  }
+
+  .textbox-container button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #1E4A6B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+
+    .about-section h1 {
+      font-size: 32px;
+    }
+
+    .about-section p {
+      font-size: 16px;
+    }
+
+    #search-container {
+      justify-content: center;
+    }
+
+    #search-box {
+      max-width: 600px;
+    }
+
+    .heading {
+      margin-top: 100px; /* Adjusted margin-top for space */
+    }
+  }
+
+  @media (min-width: 601px) {
+    #gridContainer {
+      grid-template-columns: repeat(12, 50px); /* 12 boxes per row */
+    }
+
+    .box {
+      font-size: 12px; /* Smaller font size for desktop version */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-container">
+  <div id="search-container">
+    <input type="text" id="search-box" placeholder="Search">
+    <button id="microphone-btn">
+      <img src="https://i.postimg.cc/3NCN0Xj8/mic.png" alt="Microphone" width="24" height="24">
+    </button>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">
+      <img src="https://i.postimg.cc/prtF7C9K/house-black-silhouette-without-door.png" alt="Home">
+    </a>
+  </div>
+</div> 
+
+<div class="heading">
+  <h1> ATTENDANCE </h1>
+</div>
+<div class="container">
+  <select id="sectionSelect">
+    <option value="CSE_A">Computer Science Engineering A</option>
+    <option value="CSE_B">Computer Science Engineering B</option>
+    <option value="ECE_A">Electronics and Communication Engineering A</option>
+    <option value="ECE_B">Electronics and Communication Engineering B</option>
+    <option value="AIDS">Artificial Intelligence and Data Science</option>
+    <option value="EEE">Electrical and Electronics Engineering</option>
+    <option value="CE">Civil Engineering</option>
+  </select>
+
+  <div class="textbox-container">
+    <input type="text" id="additionalText" placeholder="subject">
+    <button id="okButton">OK</button>
+  </div>
+
+  <div id="gridContainer"></div>
+
+  <button id="generatePDF">Download PDF</button>
+</div>
+<p> click the below button to check your Attendence </p> 
+<form action="https://www.webprosindia.com/rrsr/">
+    <button type="submit" id="attendance">Check Attendance</button>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+<script>
+
+ document.addEventListener('DOMContentLoaded', () => {
+  // Define available pages
+  const availablePages = ['csenotespdfs.html', 'ecenotespdfs.html', 'about.html', 'aidsnotespdfs.html', 'eeenotespdfs.html', 'civilnotespdfs.html', 'digitallibrary.html', 'digitallab.html','index.html','attendance.html','notespdfs.html','freecourses.html','writtentest.html'];
+
+  // Function to check if the page exists and redirect
+  const checkAndRedirect = (searchTerm) => {
+    const formattedSearchTerm = searchTerm.replace(/\s+/g, '').toLowerCase() + '.html';
+    if (availablePages.includes(formattedSearchTerm)) {
+      window.location.href = formattedSearchTerm;
+    } else {
+      alert('Page not found');
+    }
+  };
+
+  // Handle search on Enter key
+  document.getElementById('search-box').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const searchTerm = event.target.value;
+      checkAndRedirect(searchTerm);
+    }
+  });
+
+  // Voice search functionality
+  const microphoneBtn = document.getElementById('microphone-btn');
+  const searchBox = document.getElementById('search-box');
+
+  microphoneBtn.addEventListener('click', () => {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.start();
+
+    recognition.addEventListener('result', (event) => {
+      const speechResult = event.results[0][0].transcript;
+      searchBox.value = speechResult;
+      checkAndRedirect(speechResult);
+    });
+
+    recognition.addEventListener('error', (event) => {
+      alert('Error occurred in recognition: ' + event.error);
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sectionSelect = document.getElementById('sectionSelect');
+  const gridContainer = document.getElementById('gridContainer');
+  const generatePDFButton = document.getElementById('generatePDF');
+  const additionalText = document.getElementById('additionalText');
+  const okButton = document.getElementById('okButton');
+
+  const sectionData = {
+    CSE_A: generateSeatNumbers(501, 66),
+    CSE_B: generateSeatNumbers(567, 66, true),
+    ECE_A: generateSeatNumbers(401, 66),
+    ECE_B: generateSeatNumbers(467, 66, true),
+    AIDS: generateSeatNumbers(101, 66),
+    EEE: generateSeatNumbers(201, 66),
+    CE: generateSeatNumbers(301, 30)
+  };
+
+  function generateSeatNumbers(start, count, useAlpha = false) {
+    const seatNumbers = [];
+    for (let i = 0; i < count; i++) {
+      if (useAlpha && i >= 33) {
+        const alphaIndex = i - 33;
+        const alpha = String.fromCharCode(65 + Math.floor(alphaIndex / 10)); // 65 is ASCII for 'A'
+        const number = alphaIndex % 10;
+        seatNumbers.push(`${alpha}${number}`);
+      } else {
+        seatNumbers.push(start + i);
+      }
+    }
+    return seatNumbers;
+  }
+
+  function renderGrid(seatNumbers) {
+    gridContainer.innerHTML = '';
+    seatNumbers.forEach(seat => {
+      const box = document.createElement('div');
+      box.className = 'box';
+      box.textContent = seat;
+      box.addEventListener('click', () => {
+        box.classList.toggle('selected');
+      });
+      gridContainer.appendChild(box);
+    });
+  }
+
+  sectionSelect.addEventListener('change', (e) => {
+    renderGrid(sectionData[e.target.value]);
+  });
+
+ generatePDFButton.addEventListener('click', async () => {
+  const { jsPDF } = window.jspdf;
+  const selectedSeats = Array.from(document.querySelectorAll('.box.selected')).map(box => box.textContent);
+
+  // Get current date
+  const currentDate = new Date().toLocaleDateString();
+
+  const doc = new jsPDF();
+  // Add logo
+  doc.addImage('https://i.postimg.cc/L5YfnSJ5/Picsart-24-06-28-17-15-33-702.png', 'PNG', 10, 10, 20, 20); // Decreased logo size
+
+  // Add attendance title
+  doc.setFontSize(22);
+  doc.setFont('helvetica', 'bold');
+  doc.text('ATTENDANCE', 105, 20, null, null, 'center'); 
+
+  // Add date
+  doc.setFontSize(12);
+  doc.setFont('helvetica', 'bold');
+  doc.text(`Date: ${currentDate}`, 200, 10, null, null, 'right');
+
+  // Add divider line
+  doc.setLineWidth(0.5);
+  doc.line(10, 40, 200, 40);
+
+  // Add branch name
+  const branch = sectionSelect.options[sectionSelect.selectedIndex].text;
+  doc.setFontSize(16);
+  doc.text(`Branch: ${branch}`, 10, 50);
+
+  // Add additional text
+  const additionalTextValue = additionalText.value;
+  doc.setFontSize(14);
+  doc.text(additionalTextValue, 10, 60);
+
+  // Add seat numbers, 10 per row
+  const rows = [];
+  for (let i = 0; i < selectedSeats.length; i += 10) {
+    rows.push(selectedSeats.slice(i, i + 10).join(', '));
+  }
+
+  rows.forEach((row, index) => {
+    doc.text(row, 10, 80 + (index * 10));
+  });
+
+  doc.save('attendance.pdf');
+});
+
+// Handle OK button click
+okButton.addEventListener('click', () => {
+  alert('Text saved: ' + additionalText.value);
+});
+
+
+  // Initial render
+  renderGrid(sectionData[sectionSelect.value]);
+});
+ 
+</script>
+</body>
+</html>

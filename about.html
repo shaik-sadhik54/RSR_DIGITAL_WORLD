@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>ABOUT</title>
+<head>
+    <link rel="icon" href="https://i.postimg.cc/L5YfnSJ5/Picsart-24-06-28-17-15-33-702.png">
+    <link rel="shortcut icon" href="https://i.postimg.cc/L5YfnSJ5/Picsart-24-06-28-17-15-33-702.png">
+  </head>
+
+<head>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+  .then(registration => {
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  })
+  .catch(error => {
+    console.log('ServiceWorker registration failed: ', error);
+  });
+}
+</script>
+</head>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #CBE1EF;
+    color: #1E4A6B;
+    font-size: 26px;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 100%;
+   
+  }
+
+  .top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #4B7EA3;
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+
+  .top-container {
+    top: 0;
+  }
+
+  #search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-right: auto;
+    width: 100%;
+    position: relative;
+  }
+ .photo-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 40px;
+     border-colour:#fff;
+  }
+
+  .photo-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Make images circular */
+    margin: 0 10px; /* Adjust spacing */
+  }
+    #search-box {
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 100%; /* Increased width of the search box */
+    font-size: 15px;
+    box-sizing: border-box;
+    background: #f7f7f7;
+    border: 2px solid transparent;
+  }
+
+  #microphone-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+ 
+  .about-section {
+    padding: 20px;
+    background-color: transparent;
+  }
+
+  .about-section h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 30px;
+     margin-top: 90px;
+   
+  }
+
+  .about-section p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+
+  footer p {
+    margin: 20px 0;
+    margin-top: 80px;
+
+  }
+   .nav-links {
+    margin-left: 20px;
+  }
+
+  .nav-links img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+
+     .social-icons {
+            display: flex;
+            gap: 80px;
+             margin-top: 60px;
+              align-items: center;
+        }
+        .social-icons a {
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 40px; /* Adjust the size as needed */
+            height: 40px;
+           margin: 0 40px;
+        }
+
+
+  @media (max-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+
+    .about-section h1 {
+      font-size: 32px;
+    }
+
+    .about-section p {
+      font-size: 16px;
+    }
+
+    #search-container {
+      justify-content: center;
+    }
+
+    #search-box {
+      max-width: 600px;
+    }
+ .social-icons {
+            display: flex;
+             margin-top: 50px;
+       
+        }
+           .social-icons img {
+            width: 30px; /* Adjust the size as needed */
+            height: 30px;
+           margin: 0 25px;
+        }
+
+  }
+
+</style>
+</head>
+<body>
+
+<div class="top-container">
+  
+    <div id="search-container">
+      <input type="text" id="search-box" placeholder="Search">
+      <button id="microphone-btn">
+        <img src="https://i.postimg.cc/3NCN0Xj8/mic.png" alt="Microphone" width="24" height="24">
+      </button>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">
+        <img src="https://i.postimg.cc/prtF7C9K/house-black-silhouette-without-door.png" alt="Home">
+      </a>
+    </div>
+  </div> 
+
+<div class="container">
+  <div class="about-section">
+<h1> ABOUT</h1>
+
+       <p>
+     Welcome to RSR Digital World, the ultimate website designed specifically for Ramireddy subbarami reddy  Engineering college students and staff (RSREC) enthusiasts! Here, you will find a comprehensive range of resources to enhance your understanding of in your accadamics and in placements, explore different digital labs, delve into compilers, electronic circuit simulations, access subject PDFs, and gain valuable insights into the world of technology.
+
+Our website is dedicated to providing a user-friendly platform that caters to the diverse needs of RSR students, professionals, and hobbyists alike. Whether you’re a beginner seeking to grasp the fundamentals or an advanced learner looking to deepen your knowledge, RSR Digital World has something for everyone.
+    </p>
+    <p>
+      Subject PDFs:
+We understand the importance of having reliable reference material. That’s why our website provides a collection of subject PDFs covering a wide range of different branches topics. Whether you need a quick recap or an in-depth exploration of a particular subject, our PDFs are a valuable resource that you can access anytime, anywhere.
+    </p>
+    <At RSR Digital World, we are committed to fostering an inclusive and collaborative learning environment. We encourage users to engage with one another through , discussion boards, and online communities, allowing you to connect with fellow  enthusiasts, share knowledge, and seek guidance from experts in the field of engineering.
+
+Whether you’re a student, a professional, or simply an  enthusiast, RSR Digital World is your one-stop destination for all things related to Electronics and Communication Engineering. Start your journey with us today and unlock the limitless possibilities of the digital world of Engineering!
+For Staff we introduce digital attendence to take attendence through your pc or mobile phone and download it as pdf.
+    </p>
+   <p1><a href="https://www.rsrec.edu.in/">
+https://www.rsrec.edu.in/</a></p1>
+<h1>CREATOR & SUPPORTERS</h1>
+     <div class="photo-container">
+        <table cellspacing="10">
+            <tr>
+                <td align="center">
+                    <img src="https://i.postimg.cc/L5HbDspT/JPEG-20240619-211045-3207010626209278687.jpg" alt="Photo 1">
+                    <div>Sk.Sadik</div>
+                </td>
+                <td align="center">
+                    <img src="https://i.postimg.cc/XJf2r1Jm/Picsart-24-07-05-00-38-54-146.png" alt="Photo 2">
+                    <div>Y.V.Anil</div>
+                </td>
+                <td align="center">
+                    <img src="https://i.postimg.cc/QtK3v3f5/Picsart-24-07-05-00-41-13-017.png" alt="Photo 3">
+                    <div>V.Suneel sir</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+<b> follow our college official social media pages and channel</b>
+   <div style="text-align: center;">
+        <div class="social-icons" style="display: inline-block;">
+            <a href="http://www.youtube.com/@rsrengineeringcollege" target="_blank">
+                <img src="https://i.postimg.cc/cHqfJ5w7/youtube.png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/rsrenggcollege?igsh=MWNhMDY4M3NmZjlnaQ==" target="_blank">
+                <img src="https://i.postimg.cc/6qvbqVpj/Picsart-24-07-08-16-41-27-104.png" alt="Instagram">
+            </a>
+            <a href="https://x.com/RsrCollege?t=MOVvSF8FHxgWWOnFMr5Lbw&s=09" target="_blank">
+                <img src="https://i.postimg.cc/VNKVVLhR/Picsart-24-07-08-16-40-57-051.png" alt="Twitter">
+            </a>
+            <a href="https://www.linkedin.com/company/rsr-engineering-college/" target="_blank">
+                <img src="https://i.postimg.cc/28nXfxJ3/Picsart-24-07-08-16-41-46-641.png" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+    <footer><p> © All Rights Are Reserved </p></footer>
+  </div>
+</div>
+ <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2538051649617281"
+     crossorigin="anonymous"></script>
+</head>
+
+</body>
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+  // Define available pages
+  const availablePages = ['csenotespdfs.html', 'ecenotespdfs.html', 'about.html', 'aidsnotespdfs.html', 'eeenotespdfs.html', 'civilnotespdfs.html', 'digitallibrary.html', 'digitallab.html','index.html','attendence.html','notespdfs.html','freecourses.html','writtentest.html'];
+
+
+  // Function to check if the page exists and redirect
+  const checkAndRedirect = (searchTerm) => {
+    const formattedSearchTerm = searchTerm.replace(/\s+/g, '').toLowerCase() + '.html';
+    if (availablePages.includes(formattedSearchTerm)) {
+      window.location.href = formattedSearchTerm;
+    } else {
+      alert('Page not found');
+    }
+  };
+
+  // Handle search on Enter key
+  document.getElementById('search-box').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const searchTerm = event.target.value;
+      checkAndRedirect(searchTerm);
+    }
+  });
+
+  // Voice search functionality
+  const microphoneBtn = document.getElementById('microphone-btn');
+  const searchBox = document.getElementById('search-box');
+
+  microphoneBtn.addEventListener('click', () => {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.start();
+
+    recognition.addEventListener('result', (event) => {
+      const speechResult = event.results[0][0].transcript;
+      searchBox.value = speechResult;
+      checkAndRedirect(speechResult);
+    });
+
+    recognition.addEventListener('error', (event) => {
+      alert('Error occurred in recognition: ' + event.error);
+    });
+  });
+});
+</script>
+</html>
